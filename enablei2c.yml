@@ -1,0 +1,8 @@
+---
+- hosts: all
+  become: true
+  tasks:
+     - name: enable i2c 
+       lineinfile: path=/boot/config.txt
+       regexp: '^SELINUX='
+       line: 'SELINUX=enforcing'
