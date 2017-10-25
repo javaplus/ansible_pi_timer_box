@@ -18,11 +18,8 @@
        apt: name=python-imaging state=latest
      
      # change file ownership, group and mode. When specifying mode using octal numbers, first digit should always be 0.
-     - file:
-       path: /home/pi/workspace
-       owner: pi
-       state: directory
-       mode: 0755
+     - name: create workspace
+       file: path=/home/pi/workspace owner=pi state=directory mode=0755
        
      - name: clone ada fruit LED
        git: repo=https://github.com/adafruit/Adafruit_Python_LED_Backpack.git dest=/home/pi/workspace
