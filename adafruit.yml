@@ -1,0 +1,31 @@
+---
+- hosts: all
+  become: true
+  tasks:
+     - name: update packates 
+       apt: update_cache=yes
+
+     - name: Install build essentials
+       apt: name=build-essential state=latest
+       
+     - name: Install python dev
+       apt: name=python-dev state=latest
+       
+     - name: Install python-smbus
+       apt: name=python-smbus state=latest
+       
+     - name: Install python-imaging
+       apt: name=python-imaging state=latest
+     
+     # change file ownership, group and mode. When specifying mode using octal numbers, first digit should always be 0.
+     - file:
+       path: /home/pi/workspace
+       owner: pi
+       state: directory
+       mode: 0755
+       
+     - name: clone ada fruit LED
+       git: repo=https://github.com/adafruit/Adafruit_Python_LED_Backpack.git dest=/home/pi/workspace
+       
+     - name: package adafruit
+       script: python /home/pi/workspace/Adafruit_Python_LED_Backpack/setup.py install
