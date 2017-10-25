@@ -28,4 +28,6 @@
        git: repo=https://github.com/adafruit/Adafruit_Python_LED_Backpack.git dest=/home/pi/workspace/Adafruit_Python_LED_Backpack
        
      - name: package adafruit
-       shell: python /home/pi/workspace/Adafruit_Python_LED_Backpack/setup.py install
+       shell: python setup.py install
+       args: 
+         chdir: /home/pi/workspace/Adafruit_Python_LED_Backpack/
