@@ -25,7 +25,7 @@
        apt: name=git state=latest
        
      - name: clone ada fruit LED
-       git: repo=https://github.com/adafruit/Adafruit_Python_LED_Backpack.git dest=/home/pi/workspace
+       git: repo=https://github.com/adafruit/Adafruit_Python_LED_Backpack.git dest=/home/pi/workspace/Adafruit_LED_Backpack
        
      - name: package adafruit
        shell: python /home/pi/workspace/Adafruit_LED_Backpack/setup.py install
