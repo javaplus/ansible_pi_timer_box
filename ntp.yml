@@ -7,3 +7,7 @@
 
      - name: Install ntp
        apt: name=ntp state=latest
+       
+     # replace config file for NTP
+     - name: set up ntp config file
+       copy: src=./ntp.conf dest=/etc/ntp.conf owner=root group=root mode=0644
