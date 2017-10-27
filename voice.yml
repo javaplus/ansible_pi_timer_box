@@ -1,0 +1,15 @@
+---
+- hosts: all
+  become: true
+  tasks:
+     - name: update packages 
+       apt: update_cache=yes
+       
+     - name: install espeak
+       apt: name=espeak state=latest
+
+     - name: Install mosquitto
+       apt: name=mosquitto state=latest
+       
+     - name: Install mosquitto client
+       apt: name=mosquitto-clients state=latest
