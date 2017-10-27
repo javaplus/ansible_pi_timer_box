@@ -5,5 +5,5 @@
      - name: enable i2c module
        lineinfile: path=/etc/modules line='i2c-dev'
        
-     - name: enable i2c module
+     - name: enable i2c module in boot config
        lineinfile: path=/boot/config.txt line='dtparam=i2c_arm=on' regexp='^dtparam='
