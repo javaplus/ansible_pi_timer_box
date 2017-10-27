@@ -2,8 +2,11 @@
 - hosts: all
   become: true
   tasks:
-     - name: update packates 
+     - name: update packages 
        apt: update_cache=yes
+       
+     - name: Install pip
+       apt: name=python-pip state=latest
 
      - name: Install mosquitto
        apt: name=mosquitto state=latest
