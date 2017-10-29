@@ -8,8 +8,3 @@
      - name: install espeak
        apt: name=espeak state=latest
 
-     - name: Install mosquitto
-       apt: name=mosquitto state=latest
-       
-     - name: Install mosquitto client
-       apt: name=mosquitto-clients state=latest
