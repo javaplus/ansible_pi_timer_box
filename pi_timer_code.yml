@@ -17,6 +17,5 @@
        git: repo=https://github.com/javaplus/pi_timer_python.git dest=/home/pi/workspace/pi_timer_python
        
      - name: update rc.local to auto run program
-       shell: python setup.py install
-       args: 
-         chdir: /home/pi/workspace/Adafruit_Python_LED_Backpack/
+       lineinfile: path=/etc/rc.local insertbefore='exit 0' line='(sleep 20 \nsudo python /home/pi/workspace/pi_timer_python/mqtt_server.py) &'
+       
