@@ -11,3 +11,6 @@
      # replace config file for NTP
      - name: set up ntp config file
        copy: src=./ntp.conf dest=/etc/ntp.conf owner=root group=root mode=0644
+       
+     - name: update rc.local to get latest date
+       lineinfile: path=/etc/rc.local insertbefore='exit 0' line='sudo service ntp stop\n(sleep 25\nsudo ntpd -gq) &\n(sleep 55\nsudo service ntp start) &'
