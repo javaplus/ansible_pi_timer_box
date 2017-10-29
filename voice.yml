@@ -8,3 +8,5 @@
      - name: install espeak
        apt: name=espeak state=latest
 
+command to set volume to max: amixer -D default sset Speaker 100%
+
