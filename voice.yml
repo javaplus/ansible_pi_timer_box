@@ -8,7 +8,7 @@
      - name: install espeak
        apt: name=espeak state=latest
        
-     -name: configure alsa to use usb device
-      lineinfile: path=/usr/share/alsa/alsa.conf regexp='^defaults.ctl.card' line='defaults.ctl.card 1'
+     - name: configure alsa to use usb device
+       lineinfile: path=/usr/share/alsa/alsa.conf regexp='^defaults.ctl.card' line='defaults.ctl.card 1'
       
 
