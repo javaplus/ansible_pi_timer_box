@@ -1,0 +1,8 @@
+---
+- hosts: all
+  become: true
+  tasks:
+
+     # replace wpa_conf file
+     - name: set up ntp config file
+       copy: src=./wpa_supplicant.conf dest=/etc/wpa_supplicant/wpa_supplicant.conf owner=root group=root mode=0600
