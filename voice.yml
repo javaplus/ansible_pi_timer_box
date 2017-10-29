@@ -10,5 +10,17 @@
        
      - name: configure alsa to use usb device
        lineinfile: path=/usr/share/alsa/alsa.conf regexp='^defaults.ctl.card' line='defaults.ctl.card 1'
+     
+     - name: configure alsa to use usb device 2
+       lineinfile: path=/usr/share/alsa/alsa.conf regexp='^defaults.pcm.card' line='defaults.pcm.card 1'
+       
+     - name: configure alsa to use usb device 3
+       lineinfile: path=/usr/share/alsa/alsa.conf regexp='^defaults.rawmidi.card' line='defaults.rawmidi.card 1'
+       
+     - name: configure alsa to use usb device 4
+       lineinfile: path=/usr/share/alsa/alsa.conf regexp='^defaults.timer.card' line='defaults.timer.card 1'
+       
+     
+     
       
 
