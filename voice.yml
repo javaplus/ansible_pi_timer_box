@@ -20,6 +20,11 @@
      - name: configure alsa to use usb device 4
        lineinfile: path=/usr/share/alsa/alsa.conf regexp='^defaults.timer.card' line='defaults.timer.card 1'
        
+     - name: set volume to max
+       shell: amixer -D default sset Speaker 100%
+       
+     
+       
      
      
       
