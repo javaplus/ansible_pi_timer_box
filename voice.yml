@@ -7,6 +7,8 @@
        
      - name: install espeak
        apt: name=espeak state=latest
-
-command to set volume to max: amixer -D default sset Speaker 100%
+       
+     -name: configure alsa to use usb device
+      lineinfile: path=/usr/share/alsa/alsa.conf regexp='^defaults.ctl.card' line='defaults.ctl.card 1'
+      
 
