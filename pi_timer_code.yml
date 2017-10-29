@@ -1,0 +1,22 @@
+---
+- hosts: all
+  become: true
+  tasks:
+     - name: update packages
+       apt: update_cache=yes
+
+     
+     # create workspace folder for pi timer code
+     - name: create workspace
+       file: path=/home/pi/workspace owner=pi state=directory mode=0755
+     
+     - name: install git
+       apt: name=git state=latest
+       
+     - name: clone ada fruit LED
+       git: repo=https://github.com/javaplus/pi_timer_python.git dest=/home/pi/workspace/pi_timer_python
+       
+     - name: update rc.local to auto run program
+       shell: python setup.py install
+       args: 
+         chdir: /home/pi/workspace/Adafruit_Python_LED_Backpack/
