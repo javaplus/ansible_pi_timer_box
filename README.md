@@ -19,3 +19,7 @@ ansible-playbook adafruit.yml -v
 the -v means verbose
 
 Update the /etc/ansible/hosts file to add clients
+
+Reboot all:
+
+ansible all -a "/sbin/reboot" -f 5
