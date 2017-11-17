@@ -19,5 +19,5 @@
      - name: update rc.local to auto run program
        lineinfile: path=/etc/rc.local insertbefore='exit 0' line='(sleep 20 \nsudo python /home/pi/workspace/pi_timer_python/mqtt_server.py) &'
 
-      - name: update rc.local to auto run program
-       lineinfile: path=/etc/rc.local insertbefore='exit 0' line='(sleep 40 sudo python /home/pi/workspace/pi_timer_python/speech_server.py &> /home/pi/speech.out) &'
+     - name: update rc.local to auto run program
+       lineinfile: path=/etc/rc.local insertbefore='exit 0' line='(sleep 40 \nsudo python /home/pi/workspace/pi_timer_python/speech_server.py &> /home/pi/speech.out) &'
