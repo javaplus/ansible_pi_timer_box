@@ -6,7 +6,7 @@ then add your ansible servers public key to the client with this command:
 
 ssh-copy-id -i ~/.ssh/id_rsa.pub [userid]@[IP of new client]
 ```
-EX: ssh-copy-id -i ~/.ssh/id_rsa.pub [IP of new client]
+EX: ssh-copy-id -i ~/.ssh/id_rsa.pub pi@192.168.1.117
 ```
 
 Run the ssh-add command with no arguments to add the key so you don't have to keep typing password:
