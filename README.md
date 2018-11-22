@@ -19,13 +19,18 @@ eval $(ssh-agent)
 ```
 
 
+Update the /etc/ansible/hosts file to add clients
+Example:/etc/ansible/hosts file entry
+```
+192.168.1.117 ansible_connection=ssh ansible_ssh_user=pi
+
+```
+
 Run ansible recipes like this:
 
 ansible-playbook adafruit.yml -v
 
 the -v means verbose
-
-Update the /etc/ansible/hosts file to add clients
 
 Reboot all:
 
