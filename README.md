@@ -9,10 +9,14 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub [userid]@[IP of new client]
 EX: ssh-copy-id -i ~/.ssh/id_rsa.pub [IP of new client]
 ```
 
-Run this command to add the key so you don't have to keep typing password:
+Run the ssh-add command with no arguments to add the key so you don't have to keep typing password:
+```
 ssh-add 
-If that can't connect to ssh agent start it like this:
+```
+If you see this error when running ssh-add command: *Could not open a connection to your authentication agent.*, then run this command:
+```
 eval $(ssh-agent)
+```
 
 
 Run ansible recipes like this:
