@@ -77,3 +77,7 @@ This will download the setuptools and then I manually ran the setup command:
 This allowed the setup to complete fine.  I'm not updating the script for now, because I'm hoping Adafruit will fix their setup.py script to handle the download of the setuptools better in the future.  If this doesn't happen real soon, then I'll add the manual downloading of the setuptools myself before running the setup.py command.
 
 
+#Note environment variable
+Some source Code has been updated to to pull server IP from environment variable, but ansible scripts have not been updated.
+Need to add **pi_server_ip=10.0.0.1** to **/etc/environment** in order for mqtt_server.py, speech_server.py, and maybe a bomb py to work.
+
